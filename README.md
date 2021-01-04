@@ -1,2 +1,2 @@
 # Advanced-Android
-Android高级进阶、Android体系博文
+- [设计模式](../)
