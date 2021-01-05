@@ -40,7 +40,7 @@ Graph接口UML表示如下：
 
 <img src="images/image-20210105162739151.png" alt="image-20210105162739151" style="zoom:50%;" />
 
-<img src="images/image-20210105212142946.png" alt="image-20210105212142946" style="zoom:50%;" />
+<img src="images/image-20210105221336575.png" alt="image-20210105221336575" style="zoom:50%;" />
 
 ## 类图
 
