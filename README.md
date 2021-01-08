@@ -8,4 +8,5 @@
 # 开发环境配置
 
 - [iTerm2+OhMyZsh打造舒适终端体验](./开发环境配置/iTerm2+OhMyZsh打造舒适终端体验.md)
+- Mac中Host管理工具—**[SwitchHosts](https://github.com/oldj/SwitchHosts)**
 
