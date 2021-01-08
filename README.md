@@ -7,5 +7,5 @@
 
 # 开发环境配置
 
-- ![iTerm2 + Oh My Zsh 打造舒适终端体验](./开发环境配置/iTerm2 + Oh My Zsh 打造舒适终端体验.md)
+- [iTerm2+OhMyZsh打造舒适终端体验](./开发环境配置/iTerm2+OhMyZsh打造舒适终端体验.md)
 
