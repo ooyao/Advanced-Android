@@ -96,7 +96,7 @@ Git 自带一个` git config`的工具来帮助设置控制 Git 外观和行为�
 
 可以通过`git config <key>`:来检查 Git 的某一项配置。
 
-```
+```shell
 $ git config user.name
 ooyao
 ```
@@ -105,7 +105,7 @@ ooyao
 
 由于 Git 会从多个文件中读取同一配置变量的不同值，因此你可能会在其中看到医疗之外的值，此时你可以查询 Git 中该变量的原始值，它会告诉你哪一个配置文件最后设置了该值：
 
-```
+```shell
  $ git config --show-origin rerere.autoUpdate
 file:/home/johndoe/.gitconfig   false
 ```
@@ -124,7 +124,7 @@ file:/home/johndoe/.gitconfig   false
 
 例如，要获得`git config`命令的手册，执行如下命令：
 
-```
+```shell
 $ git help config
 ```
 
@@ -132,7 +132,7 @@ $ git help config
 
 如果不需要全面的手册，只需要可用选项的快速参考，那么可以用`-h`选项获得更简明的“help”输出：
 
-```
+```shell
 $ git add -h
 usage: git add [<options>] [--] <pathspec>...
 
@@ -156,14 +156,98 @@ usage: git add [<options>] [--] <pathspec>...
 
 
 
+# Git基础
+
+## 获取 Git 仓库
+
+通常有两种获取 GIt 仓库的方式：
+
+### 将尚未进行版本控制的本地目录转换为 Git 仓库
+
+如果你有一个尚未进行版本控制的项目目录，想要用 Git 进行管理，那么首先需要进入该项目目录中。例如在 Mac 中：
+
+```shell
+$ cd /Users/user/my_project
+```
+
+之后执行：
+
+```
+$ git init
+```
+
+该命令将创建一个名为`.git`的子目录，这个子目录含有你初始化的 Git 仓库中所有的必须文件，这些文件是 Git 仓库的骨干。但是，在这个时候，我们仅仅是做了一个初始化的操作，你的项目里的文件还没有被跟踪。
 
 
 
+如果在一个已存在文件的文件夹中进行版本控制，需要追踪这些文件并进行初始化提交。可以通过`git add`命令来指定所需的文件来进行追踪，然后执行`git commit`：
 
-# Git命令
+```sh
+$ git add *.c
+$ git add LICENSE
+$ git commit -m 'initial project version'
+```
 
-- git --version 查看 git 版本信息
-- 
+
+
+### 从其它服务器克隆一个已存在的 Git 仓库
+
+使用`git clone`命令可以克隆一个已经存在的 Git 仓库。Git 克隆的是该 Git 仓库服务器上的所有数据。当你执行`git clone`命令的时候，默认配置下远程Git 仓库中的每一个文件的每一个版本都将被拉取下来。
+
+如果服务器的磁盘坏掉了，可以使用任何一个克隆下来的用户端来重建服务器上的仓库。这就是 Git 分布式的优势。
+
+克隆仓库的命令是`git clone <url>`。比如，要克隆 Git 的链接库`libgit2`，困用下面的命令。
+
+```shell
+$ git clone https://github.com/libgit2/libgit2
+```
+
+这会在当前目录下创建一个名为“libgit2”的目录，并在这个目录下初始化一个`.git`文件夹，从远程仓库拉取下所有数据放入`.git`文件夹，然后从中读取最新版本的文件的拷贝。如果你进入到这个新建的`libgit2`文件夹，你会发现所有的项目文件已经在里面了，准备就绪等待后续的开发和使用。
+
+
+
+可以在克隆远程仓库的时候自定义本地仓库的名字，你困通过额外的参数指定新的目录名：
+
+```shell
+$ git clone https://github.com/libgit2/libgit2 mylibgit
+```
+
+此时目标目录名辩位了`mulibgit`。
+
+Git 支持多种数据传输协议。 上面的例子使用的是` https:// `协议，不过你也可以使用 `git://` 协议或者使用 `SSH `传输协议，比如 `user@server:path/to/repo.git` 。
+
+
+
+## 记录每次更新
+
+## 检查当前文件状态
+
+用`git status`命令查看哪些文件处于什么状态。如果在克隆仓库后立即使用此命令，会看到类似这样的输出：
+
+```shell
+$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+nothing to commit, working directory clean
+```
+
+从上面的信息可知当前的分支是`master`，`master`是默认的分支名。并且当前分支与远程分支没有偏离，也没有未提交的信息。因为克隆成功之后我们并未修改任何文件。
+
+
+
+在项目下创建一个新的`README`文件。然后使用`git status`命令：
+
+```shell
+$ echo 'My Project' > README
+$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Untracked files:
+(use "git add <file>..." to include in what will be committed)
+README
+nothing added to commit but untracked files present (use "git add" to
+track)
+```
 
 
 
