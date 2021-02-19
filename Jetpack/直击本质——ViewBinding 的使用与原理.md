@@ -343,15 +343,7 @@ class ViewBindingDemoAdapter: RecyclerView.Adapter<BindingViewHolder<ItemViewBin
 
 
 
-再回顾一下`Activity`和`Fragment`中使用`ViewBinding`的情况，发现也有很多样板代码，如果每个页面都这样写也会觉得很烦，我们也来尝试简化一下。
-
-# 封装 ViewBinding 
-
-
-
-
-
-
+回顾`Activity`和`Fragment`中使用`ViewBinding`的情况，发现也有很多样板代码，我已经封装好了，并开源在 `GitHub` 上，欢迎 `star`。
 
 
 
