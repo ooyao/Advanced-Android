@@ -69,6 +69,7 @@ powerline官网：[http://powerline.readthedocs....](http://powerline.readthedoc
 pip install powerline-status --user
 ```
 
+有可能因为 Python 版本问题会报错，参考https://stackoverflow.com/questions/65896334/python-pip-broken-with-sys-stderr-writeferror-exc/66103179#66103179
 没有安装pip的同学可能会碰到zsh: command not found: pip。
 
 ![ImageInitIterm](images/1460000014992804.png)
