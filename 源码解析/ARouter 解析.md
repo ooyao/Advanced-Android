@@ -1,23 +1,3 @@
-# ARouter介绍
-
-# ARouter 的技术方案
-
-## 两个 SDK
-
-### API SDK
-
-面向运行期、为开发者提供 API 支持
-
-### Compiler SDK
-
-面向编译期
-
-Router Processor：处理路由路径
-
-Interceptor Processor：拦截器
-
-Autowire Processor：自动装配
-
 
 
 ## 页面自动注册
@@ -51,6 +31,8 @@ ARouter 尽可能少的使用反射。自动注册流程如下：
 ## InstantRun兼容
 
 
+
+# 依赖注入的实现
 
 
 
